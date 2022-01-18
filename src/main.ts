@@ -1,6 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-const a = 123
-console.log(a)
+import router from './router'
+import { store, key } from './store'
+import elementPlus from './plugins/element-plus'
+import './styles/index.scss' // 加载全局样式
 
-createApp(App).mount('#app')
+createApp(App)
+  .use(router)
+  .use(store, key)
+  .use(elementPlus)
+  .mount('#app')
